@@ -12,12 +12,10 @@
  * - vectors for movement
  * - lirbraries! http://www.createjs.com/#!/CreateJS
  */
-
 /* RESOURCES
  * http://www.w3schools.com/html5/html5_ref_av_dom.asp
  * http://www.superflashbros.net/as3sfxr/
  */
-
 /**
  * Initialize the Game and start it.
  */
