@@ -18,9 +18,9 @@
  * http://www.superflashbros.net/as3sfxr/
  */
 
-/**
- * Initialize the Game and start it.
- */
+
+
+
 var game = new Game();
 
 function init() {
@@ -33,6 +33,7 @@ function init() {
  * are only ever created once. This type of object is known as a
  * singleton.
  */
+
 var imageRepository = new function() {
 	// Define images
 	this.background = new Image();
@@ -119,7 +120,7 @@ function Background() {
 	// Implement abstract function
 	this.draw = function() {
 		// Pan background
-		this.y += this.speed;
+		this.x += this.speed;
 		//this.context.clearRect(0,0, this.canvasWidth, this.canvasHeight);
 		this.context.drawImage(imageRepository.background, this.x, this.y);
 
@@ -127,8 +128,8 @@ function Background() {
 		this.context.drawImage(imageRepository.background, this.x, this.y - this.canvasHeight);
 
 		// If the image scrolled off the screen, reset
-		if (this.y >= this.canvasHeight)
-			this.y = 0;
+		if (this.x >= this.canvasWidth)
+			this.x = 0;
 	};
 }
 // Set Background to inherit properties from Drawable
@@ -607,6 +608,7 @@ function Enemy() {
 	/*
 	 * Sets the Enemy values
 	 */
+
 	this.spawn = function(x, y, speed) {
 		this.x = x;
 		this.y = y;
@@ -660,6 +662,7 @@ function Enemy() {
 	/*
 	 * Fires a bullet
 	 */
+
 	this.fire = function() {
 		game.enemyBulletPool.get(this.x+this.width/2, this.y+this.height, -2.5);
 	};
@@ -1006,3 +1009,5 @@ window.requestAnimFrame = (function(){
 				window.setTimeout(callback, 1000 / 60);
 			};
 })();
+
+}
